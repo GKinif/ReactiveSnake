@@ -11,7 +11,15 @@ class Canvas {
         this.ctx.strokeStyle = "#FFFFFF";
     }
 
-    drawCell(position, color) {
+    setCellColor(color) {
+        this.ctx.fillStyle = color;
+    };
+
+    setStrokeColor(color) {
+        this.ctx.strokeStyle = color;
+    };
+
+    drawCell(position) {
         const [x, y] = position;
         if (x > this.maxX || y > this.maxY) {
             console.log(`Out of range x:${x} y:${y}`);
@@ -20,7 +28,7 @@ class Canvas {
 
         const posX = x * this.cellSize;
         const posY = y * this.cellSize;
-        this.ctx.fillStyle = color;
+
         this.ctx.fillRect(
             posX,
             posY,

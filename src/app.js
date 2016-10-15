@@ -1,16 +1,17 @@
 import Rx from 'rxjs/Rx';
-import Canvas from './canvas';
+import Snake from './Snake';
 
 require('../sass/styles.scss');
 
-const canvas = new Canvas(document.getElementById('snake'));
+const snake = new Snake(document.getElementById('snake'));
 
-for (let i = 0; i < 25; i++) {
-    canvas.drawCell([i, i], "#FFA500");
-}
+const startClick$ = Rx.Observable.fromEvent(document.getElementById('startBtn'), 'click');
+const stopClick$ = Rx.Observable.fromEvent(document.getElementById('stopBtn'), 'click');
 
-canvas.drawCell([2, 3], "#00FF00");
+const startClickSub$ = startClick$.subscribe(() => {
+    snake.start();
+});
 
-document.getElementById('clearBtn').addEventListener('click', () => {
-    canvas.clear();
+const stopClickSub$ = stopClick$.subscribe(() => {
+    snake.stop();
 });
