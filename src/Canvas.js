@@ -8,11 +8,10 @@ class Canvas {
         console.log(`max pos => X: ${this.maxX} Y: ${this.maxY}`)
 
         this.ctx = this.container.getContext('2d');
-        this.ctx.fillStyle = "#FFA500";
         this.ctx.strokeStyle = "#FFFFFF";
     }
 
-    drawCell(position) {
+    drawCell(position, color) {
         const [x, y] = position;
         if (x > this.maxX || y > this.maxY) {
             console.log(`Out of range x:${x} y:${y}`);
@@ -21,7 +20,7 @@ class Canvas {
 
         const posX = x * this.cellSize;
         const posY = y * this.cellSize;
-
+        this.ctx.fillStyle = color;
         this.ctx.fillRect(
             posX,
             posY,
@@ -35,6 +34,10 @@ class Canvas {
             this.cellSize,
             this.cellSize
         );
+    }
+
+    clear() {
+        this.ctx.clearRect(0, 0, this.container.offsetWidth, this.container.offsetHeight);
     }
 }
 
