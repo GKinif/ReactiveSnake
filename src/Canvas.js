@@ -21,10 +21,6 @@ class Canvas {
 
     drawCell(position) {
         const [x, y] = position;
-        if (x > this.maxX || y > this.maxY) {
-            console.log(`Out of range x:${x} y:${y}`);
-            return;
-        }
 
         const posX = x * this.cellSize;
         const posY = y * this.cellSize;
