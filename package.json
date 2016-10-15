@@ -1,8 +1,24 @@
 {
-    "name": "RxJS-test",
-    "version": "1.0.0",
-    "description": "RxJS-test",
-    "main": "index.js",
+    "name": "ReactiveSnake",
+    "version": "0.0.1",
+    "description": "ReactiveSnake",
+    "main": "webpack.config.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "webpack-dev-server",
+        "start:dev": "webpack-dev-server --progress --colors"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/TheWalkingDesign/ReactiveSnake.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/TheWalkingDesign/ReactiveSnake/issues"
+    },
+    "homepage": "https://github.com/TheWalkingDesign/ReactiveSnake#readme",
     "dependencies": {
         "rxjs": "^5.0.0-rc.1",
         "rxjs-es": "^5.0.0-beta.12"
@@ -18,21 +34,5 @@
         "style-loader": "^0.13.1",
         "webpack": "^1.13.2",
         "webpack-dev-server": "^1.16.2"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack-dev-server",
-        "start:dev": "webpack-dev-server --progress --colors"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/TheWalkingDesign/RxJS-test.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/TheWalkingDesign/RxJS-test/issues"
-    },
-    "homepage": "https://github.com/TheWalkingDesign/RxJS-test#readme"
+    }
 }
