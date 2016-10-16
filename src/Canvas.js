@@ -1,4 +1,11 @@
 class Canvas {
+    /**
+     * Creates an instance of Canvas.
+     * 
+     * @param {Node} container
+     * 
+     * @memberOf Canvas
+     */
     constructor(container) {
         this.container = container;
         this.cellSize = 20;
@@ -11,14 +18,37 @@ class Canvas {
         this.ctx.strokeStyle = "#FFFFFF";
     }
 
+    /**
+     * Set the fill color of cell created by drawCell
+     * 
+     * @param {String} color
+     * 
+     * @memberOf Canvas
+     */
     setCellColor(color) {
         this.ctx.fillStyle = color;
     };
 
+    /**
+     * Set the stroke color of cell created by drawCell
+     * 
+     * @param {String} color
+     * 
+     * @memberOf Canvas
+     */
     setStrokeColor(color) {
         this.ctx.strokeStyle = color;
     };
 
+    /**
+     * draw a suare cell at the position [x, y]
+     * [x, y] are not real dom position but an integer
+     * representing the position of a cell of size this.cellSize
+     * 
+     * @param {Array} position
+     * 
+     * @memberOf Canvas
+     */
     drawCell(position) {
         const [x, y] = position;
 
@@ -40,6 +70,11 @@ class Canvas {
         );
     }
 
+    /**
+     * Clear the canva
+     * 
+     * @memberOf Canvas
+     */
     clear() {
         this.ctx.clearRect(0, 0, this.container.offsetWidth, this.container.offsetHeight);
     }
