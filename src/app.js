@@ -15,3 +15,8 @@ const startClickSub$ = startClick$.subscribe(() => {
 const stopClickSub$ = stopClick$.subscribe(() => {
     snake.stop();
 });
+
+const domScore = document.getElementById('score');
+snake.score$.subscribe(score => {
+    domScore.innerHTML = score;
+})

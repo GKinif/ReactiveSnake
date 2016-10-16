@@ -23,6 +23,9 @@ class Snake {
         this.loopSub$ = null;
         this.keySub$ = null;
 
+        this.score = 0;
+        this.score$ = new Rx.BehaviorSubject(this.score);
+
         this.snakeDirection = 'right';
 
         this.snake = this.createBaseSnake(this.canva.maxX, this.canva.maxY);
@@ -184,13 +187,15 @@ class Snake {
 
         // if the snake don't eat a food on this turn, we remove the last part
         this.foods = this.foods.filter(food => {
-            let isHeadNotOnFood = false;
-            if (!(food[0] === newHead[0] && food[1] === newHead[1])) {
-                isHeadNotOnFood = true;
+            let isHeadOnFood = false;
+            if (food[0] === newHead[0] && food[1] === newHead[1]) {
+                this.score$.next(++this.score);
+                isHeadOnFood = true;
+            } else {
                 this.snake.pop();
             }
             // only keep the food that are not at the same place as the snakeHead
-            return isHeadNotOnFood;
+            return !isHeadOnFood;
         });
 
         this.snake.unshift(newHead);
