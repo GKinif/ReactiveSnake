@@ -9,8 +9,8 @@ class Canvas {
     constructor(container) {
         this.container = container;
         this.cellSize = 20;
-        this.maxX = parseInt(this.container.offsetWidth / this.cellSize, 10);
-        this.maxY = parseInt(this.container.offsetHeight / this.cellSize, 10);
+        this.maxX = Math.floor(this.container.offsetWidth / this.cellSize);
+        this.maxY = Math.floor(this.container.offsetHeight / this.cellSize);
 
         console.log(`max pos => X: ${this.maxX} Y: ${this.maxY}`)
 
