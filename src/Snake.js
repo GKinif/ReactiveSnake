@@ -33,6 +33,15 @@ class Snake {
         this.foods = [];
     };
 
+    /**
+     * Return an array of position for the snake
+     * 
+     * @param {Number} maxX
+     * @param {Number} maxY
+     * @returns
+     * 
+     * @memberOf Snake
+     */
     createBaseSnake(maxX, maxY) {
         return [
             [Math.round(maxX / 2) - 2, Math.round(maxY / 2)],
