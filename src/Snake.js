@@ -88,6 +88,8 @@ class Snake {
         this.loopSub$.unsubscribe();
         this.canva.clear();
         this.snake = this.createBaseSnake(this.canva.maxX, this.canva.maxY);
+        this.score$.next(this.score = 0);
+        this.snakeDirection = 'right';
     };
 
     /**
@@ -117,7 +119,6 @@ class Snake {
                 newHead = [currX + 1, currY];
                 break;
         }
-        console.log('new Head: ', newHead);
         return newHead;
     };
 
@@ -164,14 +165,17 @@ class Snake {
         let isCollision = false;
         const [x, y] = head;
         if (x < 0 || x > this.canva.maxX) {
+            console.log('X collision: ', x);
             isCollision = true;
         }
         if (!isCollision && y < 0 || y > this.canva.maxY) {
+            console.log('Y collision: ', y);
             isCollision = true;
         }
         if (!isCollision) {
             for (let part of this.snake) {
                 if (head[0] === part[0] && head[1] === part[1]) {
+                    console.log('Snake collision: ', x, y);
                     isCollision = true;
                 }
             }
@@ -189,11 +193,10 @@ class Snake {
     loop(turn) {
         const newHead = this.createNewSnakeHead(this.snakeDirection);
         if (this.isCollision(newHead)) {
-            console.log('collision');
             this.stop();
             return;
         }
-
+        console.log('no collision');
         // if the snake don't eat a food on this turn, we remove the last part
         this.foods = this.foods.filter(food => {
             let isHeadOnFood = false;
