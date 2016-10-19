@@ -10,13 +10,21 @@ const stopClick$ = Rx.Observable.fromEvent(document.getElementById('stopBtn'), '
 
 const startClickSub$ = startClick$.subscribe(() => {
     snake.start();
+    document.getElementById('startBtn').style.display = 'none';
+    // document.getElementById('stopBtn').style.display = 'block';
 });
 
-const stopClickSub$ = stopClick$.subscribe(() => {
-    snake.stop();
-});
+// const stopClickSub$ = stopClick$.subscribe(() => {
+//     snake.stop();
+//     document.getElementById('startBtn').style.display = 'block';
+//     document.getElementById('stopBtn').style.display = 'none';
+// });
 
 const domScore = document.getElementById('score');
 snake.score$.subscribe(score => {
     domScore.innerHTML = score;
+});
+
+snake.endGame$.subscribe(() => {
+    document.getElementById('startBtn').style.display = 'block';
 })

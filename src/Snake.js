@@ -26,6 +26,8 @@ class Snake {
         this.score = 0;
         this.score$ = new Rx.BehaviorSubject(this.score);
 
+        this.endGame$ = new Rx.Subject();
+
         this.snakeDirection = 'right';
 
         this.snake = this.createBaseSnake(this.canva.maxX, this.canva.maxY);
@@ -88,8 +90,9 @@ class Snake {
         this.loopSub$.unsubscribe();
         this.canva.clear();
         this.snake = this.createBaseSnake(this.canva.maxX, this.canva.maxY);
-        this.score$.next(this.score = 0);
         this.snakeDirection = 'right';
+        this.score$.next(this.score = 0);
+        this.endGame$.next();
     };
 
     /**
