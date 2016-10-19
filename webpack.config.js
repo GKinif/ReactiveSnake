@@ -9,15 +9,20 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.scss$/, loader: 'style!css?sourceMap!sass?sourceMap' },
+            { test: /\.scss$/, loader: 'style!css!sass' },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader'
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                loader: "file-loader?name=images/img-[hash:6].[ext]"
             }
         ]
     },
     devServer: {
+        contentBase: path.resolve(__dirname),
         stats: 'errors-only',
     }
 };

@@ -1,38 +1,40 @@
 {
-    "name": "ReactiveSnake",
-    "version": "0.0.1",
-    "description": "ReactiveSnake",
-    "main": "webpack.config.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack-dev-server",
-        "start:dev": "webpack-dev-server --progress --colors"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/TheWalkingDesign/ReactiveSnake.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/TheWalkingDesign/ReactiveSnake/issues"
-    },
-    "homepage": "https://github.com/TheWalkingDesign/ReactiveSnake#readme",
-    "dependencies": {
-        "rxjs": "^5.0.0-rc.1",
-        "rxjs-es": "^5.0.0-beta.12"
-    },
-    "devDependencies": {
-        "sass-loader": "^4.0.2",
-        "node-sass": "^3.10.1",
-        "babel-core": "^6.17.0",
-        "babel-loader": "^6.2.5",
-        "babel-polyfill": "^6.16.0",
-        "babel-preset-es2015": "^6.16.0",
-        "css-loader": "^0.25.0",
-        "style-loader": "^0.13.1",
-        "webpack": "^1.13.2",
-        "webpack-dev-server": "^1.16.2"
-    }
+  "name": "ReactiveSnake",
+  "version": "0.0.1",
+  "description": "ReactiveSnake",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server",
+    "start:dev": "webpack-dev-server --progress --colors",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheWalkingDesign/ReactiveSnake.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheWalkingDesign/ReactiveSnake/issues"
+  },
+  "homepage": "https://github.com/TheWalkingDesign/ReactiveSnake#readme",
+  "dependencies": {
+    "rxjs": "^5.0.0-rc.1",
+    "rxjs-es": "^5.0.0-beta.12"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "file-loader": "^0.9.0",
+    "node-sass": "^3.10.1",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  }
 }
