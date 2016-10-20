@@ -3,7 +3,7 @@ body {
 }
 
 .container {
-    width: 602px;
+    max-width: 1024px;
     margin: 0 auto; 
 }
 
@@ -14,6 +14,8 @@ body {
 }
 
 #canva-container {
+    width: 602px;
+    margin: 0 auto; 
     position: relative;
     #startBtn, #stopBtn {
         position: absolute;
